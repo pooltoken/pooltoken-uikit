@@ -7,7 +7,7 @@ const getScale = ({ scale }: CheckboxProps) => {
       return "24px";
     case scales.MD:
     default:
-      return "32px";
+      return "28px";
   }
 };
 
