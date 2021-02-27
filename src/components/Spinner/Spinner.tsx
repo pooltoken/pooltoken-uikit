@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import PanIcon from "./PanIcon";
 import PancakeIcon from "./PancakeIcon";
+import PanIcon from "./PanIcon";
 import { SpinnerProps } from "./types";
 
 const rotate = keyframes`
@@ -45,8 +45,72 @@ const FloatingPanIcon = styled(PanIcon)`
 const Spinner: React.FC<SpinnerProps> = ({ size = 128 }) => {
   return (
     <Container>
-      <RotatingPancakeIcon width={`${size * 0.5}px`} />
-      <FloatingPanIcon width={`${size}px`} />
+      <svg width="67" height="67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+        <g fill="#4858ff" fill-rule="evenodd">
+          <g transform="translate(1 1)" stroke-width="2">
+            <circle cx="5" cy="50" r="8">
+              <animate
+                attributeName="cy"
+                begin="0s"
+                dur="1.8s"
+                values="50;5;50;50"
+                calcMode="linear"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="cx"
+                begin="0s"
+                dur="1.8s"
+                values="5;27;49;5"
+                calcMode="linear"
+                repeatCount="indefinite"
+              />
+            </circle>
+            <circle cx="27" cy="5" r="8">
+              <animate
+                attributeName="cy"
+                begin="0s"
+                dur="1.8s"
+                from="5"
+                to="5"
+                values="5;50;50;5"
+                calcMode="linear"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="cx"
+                begin="0s"
+                dur="1.8s"
+                from="27"
+                to="27"
+                values="27;49;5;27"
+                calcMode="linear"
+                repeatCount="indefinite"
+              />
+            </circle>
+            <circle cx="49" cy="50" r="8">
+              <animate
+                attributeName="cy"
+                begin="0s"
+                dur="1.8s"
+                values="50;50;5;50"
+                calcMode="linear"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="cx"
+                from="49"
+                to="49"
+                begin="0s"
+                dur="1.8s"
+                values="49;5;27;49"
+                calcMode="linear"
+                repeatCount="indefinite"
+              />
+            </circle>
+          </g>
+        </g>
+      </svg>
     </Container>
   );
 };
