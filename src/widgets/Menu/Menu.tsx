@@ -9,7 +9,6 @@ import Panel from "./Panel";
 import UserBlock from "./UserBlock";
 import { NavProps } from "./types";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
-import Avatar from "./Avatar";
 
 const Wrapper = styled.div`
   position: relative;
@@ -72,7 +71,7 @@ const Menu: React.FC<NavProps> = ({
   currentLang,
   cakePriceUsd,
   links,
-  profile,
+  pricelink,
   children,
 }) => {
   const { isXl } = useMatchBreakpoints();
@@ -139,6 +138,7 @@ const Menu: React.FC<NavProps> = ({
           cakePriceUsd={cakePriceUsd}
           pushNav={setIsPushed}
           links={links}
+          pricelink={priceLink}
         />
         <Inner isPushed={isPushed} showMenu={showMenu}>
           {children}
