@@ -71,7 +71,7 @@ const Menu: React.FC<NavProps> = ({
   currentLang,
   cakePriceUsd,
   links,
-  pricelink,
+  priceLink,
   children,
 }) => {
   const { isXl } = useMatchBreakpoints();
@@ -138,7 +138,7 @@ const Menu: React.FC<NavProps> = ({
           cakePriceUsd={cakePriceUsd}
           pushNav={setIsPushed}
           links={links}
-          pricelink={priceLink}
+          priceLink={priceLink}
         />
         <Inner isPushed={isPushed} showMenu={showMenu}>
           {children}
